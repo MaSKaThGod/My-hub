@@ -96,7 +96,7 @@ local woof = Instance.new("ScreenGui")
 woof.Name = "woof"
 woof.Parent = game.CoreGui
 
-function Mainholder:Window(hubname, gamename, discordlink, halflink)
+function Mainholder:Window(hubname, gamename, halflink)
    local FirstTab = false
 
    local MainFrame = Instance.new("Frame")
@@ -112,10 +112,8 @@ function Mainholder:Window(hubname, gamename, discordlink, halflink)
    local MainFrameholder = Instance.new("Frame")
    local OpenClose = Instance.new("TextButton")
    local OpenCloseCorner = Instance.new("UICorner")
-   local Discord = Instance.new("TextButton")
-   local DiscordCorner = Instance.new("UICorner")
-   local ScriptHub = Instance.new("TextButton")
-   local ScriptHubCorner = Instance.new("UICorner")
+   local MadeMaska = Instance.new("TextButton")
+   local MadeMaskaCorner = Instance.new("UICorner")
    local Keybind = Instance.new("TextButton")
    local TextKeybind = Instance.new("TextLabel")
    local BindText = Instance.new("TextLabel")
@@ -422,123 +420,54 @@ function Mainholder:Window(hubname, gamename, discordlink, halflink)
    OpenCloseCorner.Name = "OpenCloseCorner"
    OpenCloseCorner.Parent = OpenClose
    
-   Discord.Name = "Discord"
-   Discord.Parent = MainFrameholder
-   Discord.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-   Discord.Position = UDim2.new(0.0321919285, 0, 0.312419981, 0)
-   Discord.Size = UDim2.new(0, 170, 0, 40)
-   Discord.AutoButtonColor = false
-   Discord.Font = Enum.Font.Gotham
-   Discord.Text = "Discord"
-   Discord.TextColor3 = Color3.fromRGB(255, 255, 255)
-   Discord.TextSize = 20.000
+   MadeMaska.Name = "Made by Maska"
+   MadeMaska.Parent = MainFrameholder
+   MadeMaska.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+   MadeMaska.Position = UDim2.new(0.0321919285, 0, 0.526183844, 0)
+   MadeMaska.Size = UDim2.new(0, 170, 0, 40)
+   MadeMaska.AutoButtonColor = false
+   MadeMaska.Font = Enum.Font.Gotham
+   MadeMaska.Text = "Made By Maska"
+   MadeMaska.TextColor3 = Color3.fromRGB(255, 255, 255)
+   MadeMaska.TextSize = 20.000
 
-   Discord.MouseEnter:Connect(function()
+   MadeMaska.MouseEnter:Connect(function()
       TweenService:Create(
-         Discord,
+         MadeMaska,
          TweenInfo.new(.3, Enum.EasingStyle.Quad),
          {BackgroundColor3 = Color3.fromRGB(45, 45, 45)}
       ):Play()
    end)
 
-   Discord.MouseLeave:Connect(function()
+   MadeMaska.MouseLeave:Connect(function()
       TweenService:Create(
-         Discord,
+         MadeMaska,
          TweenInfo.new(.3, Enum.EasingStyle.Quad),
          {BackgroundColor3 = Color3.fromRGB(35, 35, 35)}
       ):Play()
    end)
 
-   Discord.MouseButton1Click:Connect(function()
-      Discord.TextSize = 0
+   MadeMaska.MouseButton1Click:Connect(function()
+      MadeMaska.TextSize = 0
       TweenService:Create(
-         Discord,
+         MadeMaska,
          TweenInfo.new(.3, Enum.EasingStyle.Quad),
          {TextSize = 25.000}
       ):Play()
       TweenService:Create(
-         Discord,
+         MadeMaska,
          TweenInfo.new(.3, Enum.EasingStyle.Quad),
          {TextSize = 20.000}
       ):Play()
    end)
 
-   Discord.MouseButton1Click:Connect(function()
-      setclipboard(discordlink)
-            local req = (syn and syn.request) or (http and http.request) or http_request
-            if req then
-                req({
-                    Url = 'http://127.0.0.1:6463/rpc?v=1',
-                    Method = 'POST',
-                    Headers = {
-                        ['Content-Type'] = 'application/json',
-                        Origin = 'https://discord.com'
-                    },
-                    Body = game:GetService('HttpService'):JSONEncode({
-                        cmd = 'INVITE_BROWSER',
-                        nonce = game:GetService('HttpService'):GenerateGUID(false),
-                        args = {code = halflink}
-                    })
-                })
-            end
+   MadeMaska.MouseButton1Click:Connect(function()
+      print("Not work")
    end)
    
-   DiscordCorner.CornerRadius = UDim.new(0, 6)
-   DiscordCorner.Name = "DiscordCorner"
-   DiscordCorner.Parent = Discord
-   
-   ScriptHub.Name = "ScriptHub"
-   ScriptHub.Parent = MainFrameholder
-   ScriptHub.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-   ScriptHub.Position = UDim2.new(0.0321919285, 0, 0.526183844, 0)
-   ScriptHub.Size = UDim2.new(0, 170, 0, 40)
-   ScriptHub.AutoButtonColor = false
-   ScriptHub.Font = Enum.Font.Gotham
-   ScriptHub.Text = "ScriptHub"
-   ScriptHub.TextColor3 = Color3.fromRGB(255, 255, 255)
-   ScriptHub.TextSize = 20.000
-
-   ScriptHub.MouseEnter:Connect(function()
-      TweenService:Create(
-         ScriptHub,
-         TweenInfo.new(.3, Enum.EasingStyle.Quad),
-         {BackgroundColor3 = Color3.fromRGB(45, 45, 45)}
-      ):Play()
-   end)
-
-   ScriptHub.MouseLeave:Connect(function()
-      TweenService:Create(
-         ScriptHub,
-         TweenInfo.new(.3, Enum.EasingStyle.Quad),
-         {BackgroundColor3 = Color3.fromRGB(35, 35, 35)}
-      ):Play()
-   end)
-
-   ScriptHub.MouseButton1Click:Connect(function()
-      ScriptHub.TextSize = 0
-      TweenService:Create(
-         ScriptHub,
-         TweenInfo.new(.3, Enum.EasingStyle.Quad),
-         {TextSize = 25.000}
-      ):Play()
-      TweenService:Create(
-         ScriptHub,
-         TweenInfo.new(.3, Enum.EasingStyle.Quad),
-         {TextSize = 20.000}
-      ):Play()
-   end)
-
-   ScriptHub.MouseButton1Click:Connect(function()
-      if game.CoreGui:FindFirstChild("ScriptBloxSearcher") then
-         game:GetService("CoreGui").ScriptBloxSearcher.MainFrame.Visible = true
-     else
-         loadstring(game:HttpGet("https://pastebin.com/raw/JZs1kNAT"))()
-     end
-   end)
-   
-   ScriptHubCorner.CornerRadius = UDim.new(0, 6)
-   ScriptHubCorner.Name = "ScriptHubCorner"
-   ScriptHubCorner.Parent = ScriptHub
+   MadeMaskaCorner.CornerRadius = UDim.new(0, 6)
+   MadeMaskaCorner.Name = "MadeMaskaCorner"
+   MadeMaskaCorner.Parent = MadeMaska
    
 
 
@@ -1872,7 +1801,7 @@ function ContainerItems:Toggle(title, Default, callback)
    ToggleDot.Size = UDim2.new(0, 22, 0, 20)
    
 
-   ToggleDotGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(236, 136, 36)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 204, 51))}
+   ToggleDotGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(207, 14, 1)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 204, 51))}
    ToggleDotGradient.Name = "ToggleDotGradient"
    ToggleDotGradient.Parent = ToggleDot
    
