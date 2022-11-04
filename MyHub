@@ -114,8 +114,8 @@ if game.CoreGui:FindFirstChild("woof") then
     local OpenCloseCorner = Instance.new("UICorner")
     local ScriptMadybyme = Instance.new("TextButton")
     local ScriptMadybymeCorner = Instance.new("UICorner")
-    local OtherScript = Instance.new("TextButton")
-    local OtherScriptCorner = Instance.new("UICorner")
+    local Scriptme = Instance.new("TextButton")
+    local ScriptmeCorner = Instance.new("UICorner")
     local Keybind = Instance.new("TextButton")
     local TextKeybind = Instance.new("TextLabel")
     local BindText = Instance.new("TextLabel")
@@ -421,95 +421,49 @@ if game.CoreGui:FindFirstChild("woof") then
     OpenCloseCorner.CornerRadius = UDim.new(0, 6)
     OpenCloseCorner.Name = "OpenCloseCorner"
     OpenCloseCorner.Parent = OpenClose
-
-    ScriptMadybyme.Name = "Maska Hub"
-    ScriptMadybyme.Parent = MainFrameholder
-    ScriptMadybyme.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-    ScriptMadybyme.Position = UDim2.new(0.0321919285, 0, 0.312419981, 0)
-    ScriptMadybyme.Size = UDim2.new(0, 170, 0, 40)
-    ScriptMadybyme.AutoButtonColor = false
-    ScriptMadybyme.Font = Enum.Font.Gotham
-    ScriptMadybyme.Text = "Maska Hub"
-    ScriptMadybyme.TextColor3 = Color3.fromRGB(255, 255, 255)
-    ScriptMadybyme.TextSize = 20.000
  
-    ScriptMadybyme.MouseEnter:Connect(function()
+    Scriptme.Name = "Maska Script"
+    Scriptme.Parent = MainFrameholder
+    Scriptme.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+    Scriptme.Position = UDim2.new(0.0321919285, 0, 0.526183844, 0)
+    Scriptme.Size = UDim2.new(0, 170, 0, 40)
+    Scriptme.AutoButtonColor = false
+    Scriptme.Font = Enum.Font.Gotham
+    Scriptme.Text = "Maska Script"
+    Scriptme.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Scriptme.TextSize = 20.000
+ 
+    Scriptme.MouseEnter:Connect(function()
        TweenService:Create(
-         ScriptMadybyme,
+          Scriptme,
           TweenInfo.new(.3, Enum.EasingStyle.Quad),
           {BackgroundColor3 = Color3.fromRGB(45, 45, 45)}
        ):Play()
     end)
  
-    ScriptMadybyme.MouseLeave:Connect(function()
+    Scriptme.MouseLeave:Connect(function()
        TweenService:Create(
-         ScriptMadybyme,
+          Scriptme,
           TweenInfo.new(.3, Enum.EasingStyle.Quad),
           {BackgroundColor3 = Color3.fromRGB(35, 35, 35)}
        ):Play()
     end)
  
-    ScriptMadybyme.MouseButton1Click:Connect(function()
-      ScriptMadybyme.TextSize = 0
+    Scriptme.MouseButton1Click:Connect(function()
+       Scriptme.TextSize = 0
        TweenService:Create(
-         ScriptMadybyme,
+          Scriptme,
           TweenInfo.new(.3, Enum.EasingStyle.Quad),
           {TextSize = 25.000}
        ):Play()
        TweenService:Create(
-         ScriptMadybyme,
+          Scriptme,
           TweenInfo.new(.3, Enum.EasingStyle.Quad),
           {TextSize = 20.000}
        ):Play()
     end)
  
-    ScriptMadybyme.MouseButton1Click:Connect(function()
-         print("NOT")
-    end)
-
-
-    OtherScript.Name = "OtherScript"
-    OtherScript.Parent = MainFrameholder
-    OtherScript.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-    OtherScript.Position = UDim2.new(0.0321919285, 0, 0.526183844, 0)
-    OtherScript.Size = UDim2.new(0, 170, 0, 40)
-    OtherScript.AutoButtonColor = false
-    OtherScript.Font = Enum.Font.Gotham
-    OtherScript.Text = "OtherScript"
-    OtherScript.TextColor3 = Color3.fromRGB(255, 255, 255)
-    OtherScript.TextSize = 20.000
- 
-    OtherScript.MouseEnter:Connect(function()
-       TweenService:Create(
-          OtherScript,
-          TweenInfo.new(.3, Enum.EasingStyle.Quad),
-          {BackgroundColor3 = Color3.fromRGB(45, 45, 45)}
-       ):Play()
-    end)
- 
-    OtherScript.MouseLeave:Connect(function()
-       TweenService:Create(
-          OtherScript,
-          TweenInfo.new(.3, Enum.EasingStyle.Quad),
-          {BackgroundColor3 = Color3.fromRGB(35, 35, 35)}
-       ):Play()
-    end)
- 
-    OtherScript.MouseButton1Click:Connect(function()
-       OtherScript.TextSize = 0
-       TweenService:Create(
-          OtherScript,
-          TweenInfo.new(.3, Enum.EasingStyle.Quad),
-          {TextSize = 25.000}
-       ):Play()
-       TweenService:Create(
-          OtherScript,
-          TweenInfo.new(.3, Enum.EasingStyle.Quad),
-          {TextSize = 20.000}
-       ):Play()
-    end)
- 
-    OtherScript.MouseButton1Click:Connect(function()
+    Scriptme.MouseButton1Click:Connect(function()
        if game.CoreGui:FindFirstChild("ScriptBloxSearcher") then
           game:GetService("CoreGui").ScriptBloxSearcher.MainFrame.Visible = true
       else
@@ -517,9 +471,9 @@ if game.CoreGui:FindFirstChild("woof") then
       end
     end)
     
-    OtherScriptCorner.CornerRadius = UDim.new(0, 6)
-    OtherScriptCorner.Name = "OtherScriptCorner"
-    OtherScriptCorner.Parent = OtherScript
+    ScriptmeCorner.CornerRadius = UDim.new(0, 6)
+    ScriptmeCorner.Name = "ScriptmeCorner"
+    ScriptmeCorner.Parent = Scriptme
     
  
  
