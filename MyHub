@@ -425,7 +425,7 @@ if game.CoreGui:FindFirstChild("woof") then
     ScriptMadybyme.Name = "Maska Hub"
     ScriptMadybyme.Parent = MainFrameholder
     ScriptMadybyme.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-    ScriptMadybyme.Position = UDim2.new(0.0321919285, 0, 0.526183844, 0)
+    ScriptMadybyme.Position = UDim2.new(0.0321919285, 0, 0.312419981, 0)
     ScriptMadybyme.Size = UDim2.new(0, 170, 0, 40)
     ScriptMadybyme.AutoButtonColor = false
     ScriptMadybyme.Font = Enum.Font.Gotham
