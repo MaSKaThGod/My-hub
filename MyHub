@@ -871,7 +871,6 @@ function UpdateResoults()
 			end
 		end
 	end
-   print("changed")
 end
 
 MainFrameSearchBox.Changed:Connect(UpdateResoults)
